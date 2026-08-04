@@ -1,9 +1,14 @@
 name: Generate repository map
 
 on:
+  workflow_dispatch:
+
   push:
     branches:
       - master
+
+permissions:
+  contents: write
 
 jobs:
   generate:
@@ -12,8 +17,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: astral-sh/setup-uv@v5
-
-      - run: uv sync
-
-      - run: uv run tree-exporter
+      - uses: mrf0rtuna4/TreeExporter@master

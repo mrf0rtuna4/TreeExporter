@@ -1,0 +1,6 @@
+name: Generate repository map
+description: Generate repository map
+author: mrf0rtuna4
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
