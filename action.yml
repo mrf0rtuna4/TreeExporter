@@ -23,6 +23,14 @@ inputs:
     required: false
     default: ""
 
+  commit:
+    default: "false"
+
+  commit-message:
+    default: "Update repository structure"
+
+  branch:
+    default: ""
 
 runs:
 
