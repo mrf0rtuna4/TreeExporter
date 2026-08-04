@@ -1,6 +1,39 @@
 name: TreeExporter
-description: Generate repository map
+description: Generate repository structure visualization
 author: mrf0rtuna4
+inputs:
+
+  path:
+    description: Repository path
+    required: false
+    default: "."
+
+  output:
+    description: Output file
+    required: false
+    default: "structure.txt"
+
+  format:
+    description: Export format
+    required: false
+    default: "txt"
+
+  exclude:
+    description: Additional excluded folders separated by comma
+    required: false
+    default: ""
+
+
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+
+  using: docker
+  image: Dockerfile
+
+  args:
+    - generate
+    - --path
+    - ${{ inputs.path }}
+    - --output
+    - ${{ inputs.output }}
+    - --format
+    - ${{ inputs.format }}
