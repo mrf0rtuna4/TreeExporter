@@ -24,7 +24,6 @@ jobs:
           branch: "master"
 
       - name: Commit
-        if: inputs.commit == 'true'
         shell: bash
         run: |
           git config user.name github-actions
