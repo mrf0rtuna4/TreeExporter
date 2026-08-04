@@ -38,10 +38,11 @@ runs:
   image: Dockerfile
 
   args:
-    - generate
     - --path
     - ${{ inputs.path }}
     - --output
     - ${{ inputs.output }}
     - --format
     - ${{ inputs.format }}
+    - --exclude
+    - ${{ inputs.exclude }}
