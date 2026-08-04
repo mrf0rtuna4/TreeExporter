@@ -21,7 +21,7 @@ inputs:
   exclude:
     description: Additional excluded folders separated by comma
     required: false
-    default: ""
+    default: ".git"
 
   commit:
     default: "false"
