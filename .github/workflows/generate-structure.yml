@@ -36,5 +36,5 @@ jobs:
           exit 0
           fi
 
-          git commit -m "${{ inputs.commit-message }}"
+          git commit -m "test ${{ inputs.commit-message }}"
           git push
