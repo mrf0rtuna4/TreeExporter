@@ -21,7 +21,7 @@ inputs:
   exclude:
     description: Additional excluded folders separated by comma
     required: false
-    default: ".git"
+    default: ".git, .github, .venv, venv, node_modules, __pycache__"
 
   commit:
     default: "false"
