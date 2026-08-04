@@ -10,8 +10,4 @@ def load_ignore_file(path: str = DEFAULT_IGNORE_FILE) -> list[Any] | list[str]:
     if not file.exists():
         return []
 
-    return [
-        line.strip()
-        for line in file.read_text().splitlines()
-        if line.strip()
-    ]
+    return [line.strip() for line in file.read_text().splitlines() if line.strip()]

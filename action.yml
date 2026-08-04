@@ -1,4 +1,4 @@
-name: Generate repository map
+name: TreeExporter
 description: Generate repository map
 author: mrf0rtuna4
 runs:

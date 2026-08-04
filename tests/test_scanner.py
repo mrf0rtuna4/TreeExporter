@@ -5,4 +5,3 @@ def test_scan_returns_list():
     result = scan_repository(".")
 
     assert isinstance(result, list)
-    

@@ -1,5 +1,5 @@
 [project]
-name = "treeexporter"
+name = "TreeExporter"
 version = "0.1.0"
 description = "Generate visual maps of repository structure"
 readme = "README.md"

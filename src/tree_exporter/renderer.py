@@ -1,5 +1,6 @@
 from typing import Any
 
+
 def generate_svg(tree: Any, output: str = "structure.svg") -> None:
     """
     Placeholder SVG renderer.
