@@ -8,6 +8,7 @@ _No more manually maintaining folder trees in your README._
 
 <p>
     <img src="https://img.shields.io/badge/python-3.11+-blue?style=for-the-badge&logo=python" />
+    <img src="https://img.shields.io/github/actions/workflow/status/mrf0rtuna4/TreeExporter/generate-structure.yml?style=for-the-badge" />
 </p>
 
 </div>
