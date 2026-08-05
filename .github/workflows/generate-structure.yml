@@ -20,8 +20,10 @@ jobs:
       - name: Run generate
         uses: mrf0rtuna4/TreeExporter@master
         with: 
+          format: "svg"
           commit: "true"
           branch: "master"
+          output: "structure.svg"
           
       - name: Commit
         shell: bash
