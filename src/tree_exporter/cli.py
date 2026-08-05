@@ -1,6 +1,6 @@
 import typer
 
-from tree_exporter.config import ScanConfig
+from tree_exporter.config import ScanConfig, DEFAULT_EXCLUDES
 from tree_exporter.renderer import (
     generate_svg,
     generate_txt,
@@ -37,8 +37,14 @@ def generate(
     ),
 ):
 
+    extra_exclude: set[str] = {
+        part.strip()
+        for value in exclude
+        for part in value.split(",")
+        if part.strip()
+    }
     config = ScanConfig(
-        exclude=set(exclude),
+        exclude=set(DEFAULT_EXCLUDES | extra_exclude),
     )
 
     tree = scan_repository(
