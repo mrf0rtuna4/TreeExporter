@@ -24,7 +24,7 @@ jobs:
         uses: mrf0rtuna4/TreeExporter@master
         with:
           format: "svg"
-          output: "structure"
+          output: "docs/structure"
 
       - name: Check if structure changed
         id: changes
