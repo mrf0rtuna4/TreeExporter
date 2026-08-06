@@ -1,6 +1,9 @@
 name: TreeExporter
 description: Generate repository structure visualization
 author: mrf0rtuna4
+branding:
+  icon: 'battery-charging'
+  color: 'gray-dark'
 inputs:
 
   path:
