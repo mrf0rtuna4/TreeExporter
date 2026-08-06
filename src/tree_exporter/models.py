@@ -17,7 +17,7 @@ class TreeNode:
     path: Path
     is_directory: bool
 
-    children: list["TreeNode"] = field(default_factory=list) # pyright: ignore[reportUnknownVariableType]
+    children: list["TreeNode"] = field(default_factory=list)  # pyright: ignore[reportUnknownVariableType]
 
     def add_child(self, node: "TreeNode") -> None:
         self.children.append(node)

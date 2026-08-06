@@ -16,9 +16,7 @@ def generate_txt(
     - support file metadata
     """
 
-    lines: list[str] = [
-        tree.name
-    ]
+    lines: list[str] = [tree.name]
 
     _render_children(
         tree,
@@ -47,7 +45,6 @@ def _render_children(
     )
 
     for index, child in enumerate(children):
-
         is_last = index == len(children) - 1
 
         if is_last:
@@ -57,9 +54,7 @@ def _render_children(
             branch = "+-- "
             next_prefix = prefix + "|   "
 
-        lines.append(
-            prefix + branch + child.name
-        )
+        lines.append(prefix + branch + child.name)
 
         if child.is_directory:
             _render_children(

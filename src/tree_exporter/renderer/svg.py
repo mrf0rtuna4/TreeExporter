@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from tree_exporter.scanner import build_layout
 from tree_exporter.models import TreeNode
+from tree_exporter.scanner import build_layout
 
 FONT_SIZE = 14
 LINE_HEIGHT = 24
@@ -25,14 +25,11 @@ def generate_svg(
     ]
 
     for item in layout:
-
         x = PADDING + item.depth * INDENT
         y = PADDING + item.y * LINE_HEIGHT
 
         label = (
-            f"📁 {item.node.name}"
-            if item.node.is_directory
-            else f"📄 {item.node.name}"
+            f"📁 {item.node.name}" if item.node.is_directory else f"📄 {item.node.name}"
         )
 
         svg.append(

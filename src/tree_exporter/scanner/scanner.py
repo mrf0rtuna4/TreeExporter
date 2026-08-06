@@ -9,10 +9,7 @@ def should_ignore(
     config: ScanConfig,
 ) -> bool:
 
-    return any(
-        part in config.exclude
-        for part in path.parts
-    )
+    return any(part in config.exclude for part in path.parts)
 
 
 def scan_repository(
@@ -46,13 +43,8 @@ def _scan_directory(
 ) -> None:
 
     for item in sorted(
-        directory.iterdir(),
-        key=lambda p: (
-            not p.is_dir(),
-            p.name.lower()
-        )
+        directory.iterdir(), key=lambda p: (not p.is_dir(), p.name.lower())
     ):
-
         if should_ignore(item, config):
             continue
 

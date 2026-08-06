@@ -138,8 +138,8 @@ tree = scan_repository(
 
 - ✅ Text export
 - ✅ SVG export
-- 🔄 GitHub Action
-- 🚧 Themes
+- ✅ GitHub Action
+- 🔄 Themes
 - 🚧 Mermaid export
 - 🚧 JSON export
 - 🚧 PNG export

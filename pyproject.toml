@@ -10,6 +10,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "mypy>=2.3.0",
     "pytest>=9.1.1",
     "ruff>=0.16.1",
 ]
@@ -23,3 +24,44 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/tree_exporter"]
+
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+exclude = [
+    ".git",
+    ".venv",
+    ".idea",
+    ".vscode",
+    "__pycache__",
+]
+
+
+[tool.ruff.lint]
+
+select = [
+    "E",
+    "F",
+    "W",
+    "N",
+    "I",
+    "UP",
+    "B",
+    "SIM",
+    "C4",
+    "PIE",
+    "RUF",
+    "ANN",
+    "ASYNC",
+    "S",
+    "DTZ",
+    "PLE"
+]
+
+ignore = [
+    "E501",
+    "ANN101",
+    "S101"
+]

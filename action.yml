@@ -1,30 +1,36 @@
 name: TreeExporter
 description: Generate repository structure visualization
 author: mrf0rtuna4
-branding:
-  icon: 'battery-charging'
-  color: 'gray-dark'
-inputs:
 
+branding:
+  icon: "battery-charging"
+  color: "gray-dark"
+
+inputs:
   path:
     description: Repository path
     required: false
     default: "."
 
   output:
-    description: Output file
+    description: Output file path without extension
     required: false
-    default: "structure.txt"
+    default: "structure"
 
   format:
     description: Export format
     required: false
-    default: "txt"
+    default: "svg"
 
   exclude:
     description: Additional excluded folders separated by comma
     required: false
     default: ""
+
+  exclude-overwrite:
+    description: Replace default excludes instead of adding to them
+    required: false
+    default: "false"
 
   commit:
     default: "false"
@@ -36,10 +42,8 @@ inputs:
     default: ""
 
 runs:
-
   using: docker
   image: Dockerfile
-
   args:
     - --path
     - ${{ inputs.path }}
@@ -49,3 +53,5 @@ runs:
     - ${{ inputs.format }}
     - --exclude
     - ${{ inputs.exclude }}
+    - --exclude-overwrite
+    - ${{ inputs.exclude-overwrite }}
