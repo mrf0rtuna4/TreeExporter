@@ -7,6 +7,7 @@
 _No more manually maintaining folder trees in your README._
 
 <p>
+    <img src="https://img.shields.io/pypi/v/TreeExporter?style=for-the-badge&logo=pypi" />
     <img src="https://img.shields.io/badge/python-3.11+-blue?style=for-the-badge&logo=python" />
     <img src="https://img.shields.io/github/actions/workflow/status/mrf0rtuna4/TreeExporter/generate-structure.yml?style=for-the-badge" />
 </p>
@@ -46,15 +47,15 @@ It can be:
 
 ### SVG
 
-![Repository Structure](./structure.svg)
+![Repository Structure](./docs/structure.svg)
 
 ```md
-![Repository Structure](./structure.svg)
+![Repository Structure](./docs/structure.svg)
 ```
 
 ### Text
 
-Look at `./structure.txt`
+Look at `./docs/structure.txt`
 
 ---
 
@@ -74,31 +75,55 @@ More formats are planned.
 
 ## Installation
 
-WIP
+Using **uv** (recommended):
+
+```bash
+uv tool install tree-exporter
+```
+
+or install into the current environment:
+
+```bash
+uv add tree-exporter
+```
+
+Using **pip**:
+
+```bash
+pip install tree-exporter
+```
 
 ---
 
 ## 💻 CLI
 
-Generate a text tree:
+Generate a repository structure:
 
 ```bash
 tree-exporter
 ```
 
-Generate SVG:
+Generate SVG into `docs/tree.svg`:
 
 ```bash
 tree-exporter \
     --format svg \
-    --output structure.svg
+    --output docs/tree
 ```
 
-Exclude additional folders:
+Exclude additional directories:
 
 ```bash
 tree-exporter \
     --exclude ".venv,dist,build"
+```
+
+Replace the default exclusion list:
+
+```bash
+tree-exporter \
+    --exclude-overwrite \
+    --exclude ".git"
 ```
 
 ---
@@ -108,10 +133,10 @@ tree-exporter \
 Automatically regenerate your repository structure on a schedule or after every push.
 
 ```yaml
-- uses: mrf0rtuna4/TreeExporter@master
+- uses: mrf0rtuna4/TreeExporter@v0.1.0
   with:
     format: svg
-    output: docs/structure.svg
+    output: docs/structure
 ```
 
 Perfect for keeping documentation synchronized with your project.
