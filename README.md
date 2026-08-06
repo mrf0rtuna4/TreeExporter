@@ -78,19 +78,19 @@ More formats are planned.
 Using **uv** (recommended):
 
 ```bash
-uv tool install tree-exporter
+uv tool install TreeExporter
 ```
 
 or install into the current environment:
 
 ```bash
-uv add tree-exporter
+uv add TreeExporter
 ```
 
 Using **pip**:
 
 ```bash
-pip install tree-exporter
+pip install TreeExporter
 ```
 
 ---
