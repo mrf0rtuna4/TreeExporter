@@ -26,15 +26,6 @@ jobs:
           format: "svg"
           output: "docs/structure"
 
-      - name: Check if structure changed
-        id: changes
-        shell: bash
-        run: |
-          if git diff --quiet -- structure.svg; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
 
       - name: Commit and push
         if: steps.changes.outputs.changed == 'true'
