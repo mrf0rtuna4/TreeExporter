@@ -104,15 +104,17 @@ def generate(
         [],
         help="Excluded directories separated by comma. Can be repeated.",
     ),
-    exclude_overwrite: bool = typer.Option(
-        False,
-        help="Replace default excludes instead of adding to them",
-    ),
+    exclude_overwrite: str = typer.Option(
+        "false",
+        help="Replace default excludes",
+    )
 ):
+    overwrite = exclude_overwrite.lower() == "true"
+
     config = ScanConfig(
         exclude=build_excludes(
             additional_excludes=exclude,
-            overwrite_defaults=exclude_overwrite,
+            overwrite_defaults=overwrite,
         ),
     )
 
