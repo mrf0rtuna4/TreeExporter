@@ -9,4 +9,4 @@ COPY . .
 
 RUN uv sync --frozen --no-dev
 
-ENTRYPOINT ["uv", "run", "tree-exporter"]
+ENTRYPOINT ["/opt/tree-exporter/.venv/bin/tree-exporter"]
