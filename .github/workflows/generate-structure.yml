@@ -1,4 +1,4 @@
-name: Generate repository map
+name: Generate theme examples
 
 on:
   workflow_dispatch:
@@ -20,13 +20,75 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run generate
+      - name: Generate light
         uses: mrf0rtuna4/TreeExporter@master
         with:
           format: "svg"
-          output: "docs/structure"
+          output: "docs/themes/light"
+          theme: "light"
+
+      - name: Generate dark
+        uses: mrf0rtuna4/TreeExporter@master
+        with:
+          format: "svg"
+          output: "docs/themes/dark"
           theme: "dark"
 
+      - name: Generate GitHub Light
+        uses: mrf0rtuna4/TreeExporter@master
+        with:
+          format: "svg"
+          output: "docs/themes/github-light"
+          theme: "github-light"
+
+      - name: Generate GitHub Dark
+        uses: mrf0rtuna4/TreeExporter@master
+        with:
+          format: "svg"
+          output: "docs/themes/github-dark"
+          theme: "github-dark"
+
+      - name: Generate Dracula
+        uses: mrf0rtuna4/TreeExporter@master
+        with:
+          format: "svg"
+          output: "docs/themes/dracula"
+          theme: "dracula"
+
+      - name: Generate Monokai
+        uses: mrf0rtuna4/TreeExporter@master
+        with:
+          format: "svg"
+          output: "docs/themes/monokai"
+          theme: "monokai"
+
+      - name: Generate Nord
+        uses: mrf0rtuna4/TreeExporter@master
+        with:
+          format: "svg"
+          output: "docs/themes/nord"
+          theme: "nord"
+
+      - name: Generate Solarized Light
+        uses: mrf0rtuna4/TreeExporter@master
+        with:
+          format: "svg"
+          output: "docs/themes/solarized-light"
+          theme: "solarized-light"
+
+      - name: Generate Solarized Dark
+        uses: mrf0rtuna4/TreeExporter@master
+        with:
+          format: "svg"
+          output: "docs/themes/solarized-dark"
+          theme: "solarized-dark"
+
+      - name: Generate One Dark
+        uses: mrf0rtuna4/TreeExporter@master
+        with:
+          format: "svg"
+          output: "docs/themes/one-dark"
+          theme: "one-dark"
 
       - name: Commit and push
         shell: bash
@@ -34,12 +96,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add -A
+          git add docs/themes
 
           if git diff --cached --quiet; then
-            echo "Repository structure is up-to-date."
+            echo "Theme examples are up-to-date."
             exit 0
           fi
 
-          git commit -m "Update repository structure"
+          git commit -m "Update theme examples"
           git push

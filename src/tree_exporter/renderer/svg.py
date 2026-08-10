@@ -1,17 +1,13 @@
 from pathlib import Path
-from typing import Literal
 
 from tree_exporter.models import TreeNode
-from tree_exporter.renderer.themes import get_theme
+from tree_exporter.renderer.themes import get_theme, ThemeName
 from tree_exporter.scanner import build_layout
 
 FONT_SIZE = 14
 LINE_HEIGHT = 24
 INDENT = 24
 PADDING = 16
-
-ThemeName = Literal["light", "dark"]
-
 
 def generate_svg(
     tree: TreeNode,
