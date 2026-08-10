@@ -7,6 +7,7 @@ import typer
 
 from tree_exporter.config import DEFAULT_EXCLUDES, ScanConfig
 from tree_exporter.renderer import generate_svg, generate_txt
+from tree_exporter.renderer.themes import ThemeName
 from tree_exporter.scanner import scan_repository
 
 app = typer.Typer(
@@ -67,7 +68,10 @@ def parse_excludes(values: list[str]) -> set[str]:
     }
 
 
-def resolve_output_path(output_base: str, output_format: Literal["txt", "svg"]) -> str:
+def resolve_output_path(
+    output_base: str,
+    output_format: Literal["txt", "svg"],
+) -> str:
     extension = ".svg" if output_format == "svg" else ".txt"
     return f"{output_base}{extension}"
 
@@ -100,6 +104,10 @@ def generate(
         "svg",
         help="Output format: txt/svg",
     ),
+    theme: ThemeName = typer.Option(
+        "light",
+        help="SVG theme: light/dark",
+    ),
     exclude: list[str] = typer.Option(
         [],
         help="Excluded directories separated by comma. Can be repeated.",
@@ -107,7 +115,7 @@ def generate(
     exclude_overwrite: str = typer.Option(
         "false",
         help="Replace default excludes",
-    )
+    ),
 ):
     overwrite = exclude_overwrite.lower() == "true"
 
@@ -140,6 +148,7 @@ def generate(
             generate_svg(
                 tree,
                 output_path,
+                theme=theme,
             )
 
     typer.echo(f"Generated {output_path}")
