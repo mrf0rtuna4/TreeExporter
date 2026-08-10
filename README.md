@@ -304,7 +304,7 @@ jobs:
 
     steps:
       - name: Generate repository structure
-        uses: mrf0rtuna4/TreeExporter@v0.1.0
+        uses: mrf0rtuna4/TreeExporter@v0.2.0
         with:
           format: svg
           output: docs/structure
@@ -348,7 +348,7 @@ For example, generate a dark-themed structure:
 
 ```yaml
 - name: Generate repository structure
-  uses: mrf0rtuna4/TreeExporter@v0.1.0
+  uses: mrf0rtuna4/TreeExporter@v0.2.0
   with:
     format: svg
     output: docs/structure
@@ -359,7 +359,7 @@ Or use Dracula:
 
 ```yaml
 - name: Generate repository structure
-  uses: mrf0rtuna4/TreeExporter@v0.1.0
+  uses: mrf0rtuna4/TreeExporter@v0.2.0
   with:
     format: svg
     output: docs/structure
@@ -372,7 +372,7 @@ Additional exclusions can be configured directly in the Action:
 
 ```yaml
 - name: Generate repository structure
-  uses: mrf0rtuna4/TreeExporter@v0.1.0
+  uses: mrf0rtuna4/TreeExporter@v0.2.0
   with:
     format: svg
     output: docs/structure
@@ -383,7 +383,7 @@ To completely replace the default exclusions:
 
 ```yaml
 - name: Generate repository structure
-  uses: mrf0rtuna4/TreeExporter@v0.1.0
+  uses: mrf0rtuna4/TreeExporter@v0.2.0
   with:
     format: svg
     output: docs/structure
@@ -419,7 +419,7 @@ jobs:
           fetch-depth: 0
 
       - name: Generate repository structure
-        uses: mrf0rtuna4/TreeExporter@v0.1.0
+        uses: mrf0rtuna4/TreeExporter@v0.2.0
         with:
           format: svg
           output: docs/structure
