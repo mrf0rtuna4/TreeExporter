@@ -25,6 +25,7 @@ jobs:
         with:
           format: "svg"
           output: "docs/structure"
+          theme: "dark"
 
 
       - name: Commit and push
