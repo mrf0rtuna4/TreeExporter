@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="848">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="16" y="16" font-size="14" font-family="monospace" fill="#0969da">📁 workspace</text>
+<text x="40" y="40" font-size="14" font-family="monospace" fill="#0969da">📁 .github</text>
+<text x="64" y="64" font-size="14" font-family="monospace" fill="#0969da">📁 workflows</text>
+<text x="88" y="88" font-size="14" font-family="monospace" fill="#24292f">📄 generate-structure.yml</text>
+<text x="88" y="112" font-size="14" font-family="monospace" fill="#24292f">📄 publish.yml</text>
+<text x="40" y="136" font-size="14" font-family="monospace" fill="#0969da">📁 docs</text>
+<text x="64" y="160" font-size="14" font-family="monospace" fill="#24292f">📄 structure.svg</text>
+<text x="40" y="184" font-size="14" font-family="monospace" fill="#0969da">📁 src</text>
+<text x="64" y="208" font-size="14" font-family="monospace" fill="#0969da">📁 tree_exporter</text>
+<text x="88" y="232" font-size="14" font-family="monospace" fill="#0969da">📁 renderer</text>
+<text x="112" y="256" font-size="14" font-family="monospace" fill="#24292f">📄 __init__.py</text>
+<text x="112" y="280" font-size="14" font-family="monospace" fill="#24292f">📄 svg.py</text>
+<text x="112" y="304" font-size="14" font-family="monospace" fill="#24292f">📄 themes.py</text>
+<text x="112" y="328" font-size="14" font-family="monospace" fill="#24292f">📄 txt.py</text>
+<text x="88" y="352" font-size="14" font-family="monospace" fill="#0969da">📁 scanner</text>
+<text x="112" y="376" font-size="14" font-family="monospace" fill="#24292f">📄 __init__.py</text>
+<text x="112" y="400" font-size="14" font-family="monospace" fill="#24292f">📄 layout.py</text>
+<text x="112" y="424" font-size="14" font-family="monospace" fill="#24292f">📄 scanner.py</text>
+<text x="88" y="448" font-size="14" font-family="monospace" fill="#24292f">📄 __init__.py</text>
+<text x="88" y="472" font-size="14" font-family="monospace" fill="#24292f">📄 __main__.py</text>
+<text x="88" y="496" font-size="14" font-family="monospace" fill="#24292f">📄 cli.py</text>
+<text x="88" y="520" font-size="14" font-family="monospace" fill="#24292f">📄 config.py</text>
+<text x="88" y="544" font-size="14" font-family="monospace" fill="#24292f">📄 models.py</text>
+<text x="40" y="568" font-size="14" font-family="monospace" fill="#0969da">📁 tests</text>
+<text x="64" y="592" font-size="14" font-family="monospace" fill="#24292f">📄 test_scanner.py</text>
+<text x="40" y="616" font-size="14" font-family="monospace" fill="#24292f">📄 .gitignore</text>
+<text x="40" y="640" font-size="14" font-family="monospace" fill="#24292f">📄 .python-version</text>
+<text x="40" y="664" font-size="14" font-family="monospace" fill="#24292f">📄 action.yml</text>
+<text x="40" y="688" font-size="14" font-family="monospace" fill="#24292f">📄 Dockerfile</text>
+<text x="40" y="712" font-size="14" font-family="monospace" fill="#24292f">📄 LICENSE</text>
+<text x="40" y="736" font-size="14" font-family="monospace" fill="#24292f">📄 main.py</text>
+<text x="40" y="760" font-size="14" font-family="monospace" fill="#24292f">📄 pyproject.toml</text>
+<text x="40" y="784" font-size="14" font-family="monospace" fill="#24292f">📄 README.md</text>
+<text x="40" y="808" font-size="14" font-family="monospace" fill="#24292f">📄 uv.lock</text>
+</svg>
