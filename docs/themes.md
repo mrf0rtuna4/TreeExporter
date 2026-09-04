@@ -6,7 +6,7 @@ Choose a theme with the `--theme` CLI option or the `theme` GitHub Action input.
 
 ### Light
 
-![Light theme](./docs/themes/light.svg)
+![Light theme](./themes/light.svg)
 
 ```bash
 tree-exporter --theme light
@@ -14,7 +14,7 @@ tree-exporter --theme light
 
 ### Dark
 
-![Dark theme](./docs/themes/dark.svg)
+![Dark theme](./themes/dark.svg)
 
 ```bash
 tree-exporter --theme dark
@@ -22,7 +22,7 @@ tree-exporter --theme dark
 
 ### GitHub Light
 
-![GitHub Light theme](./docs/themes/github-light.svg)
+![GitHub Light theme](./themes/github-light.svg)
 
 ```bash
 tree-exporter --theme github-light
@@ -30,7 +30,7 @@ tree-exporter --theme github-light
 
 ### GitHub Dark
 
-![GitHub Dark theme](./docs/themes/github-dark.svg)
+![GitHub Dark theme](./themes/github-dark.svg)
 
 ```bash
 tree-exporter --theme github-dark
@@ -38,7 +38,7 @@ tree-exporter --theme github-dark
 
 ### Dracula
 
-![Dracula theme](./docs/themes/dracula.svg)
+![Dracula theme](./themes/dracula.svg)
 
 ```bash
 tree-exporter --theme dracula
@@ -46,7 +46,7 @@ tree-exporter --theme dracula
 
 ### Monokai
 
-![Monokai theme](./docs/themes/monokai.svg)
+![Monokai theme](./themes/monokai.svg)
 
 ```bash
 tree-exporter --theme monokai
@@ -54,7 +54,7 @@ tree-exporter --theme monokai
 
 ### Nord
 
-![Nord theme](./docs/themes/nord.svg)
+![Nord theme](./themes/nord.svg)
 
 ```bash
 tree-exporter --theme nord
@@ -62,7 +62,7 @@ tree-exporter --theme nord
 
 ### Solarized Light
 
-![Solarized Light theme](./docs/themes/solarized-light.svg)
+![Solarized Light theme](./themes/solarized-light.svg)
 
 ```bash
 tree-exporter --theme solarized-light
@@ -70,7 +70,7 @@ tree-exporter --theme solarized-light
 
 ### Solarized Dark
 
-![Solarized Dark theme](./docs/themes/solarized-dark.svg)
+![Solarized Dark theme](./themes/solarized-dark.svg)
 
 ```bash
 tree-exporter --theme solarized-dark
@@ -78,7 +78,7 @@ tree-exporter --theme solarized-dark
 
 ### One Dark
 
-![One Dark theme](./docs/themes/one-dark.svg)
+![One Dark theme](./themes/one-dark.svg)
 
 ```bash
 tree-exporter --theme one-dark
