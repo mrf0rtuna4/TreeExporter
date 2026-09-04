@@ -176,7 +176,7 @@ solarized-dark
 one-dark
 ```
 
-See [Themes](/docs/themes.md) for previews.
+See [Themes](./docs/themes.md) for previews.
 
 ### Excluding directories
 
