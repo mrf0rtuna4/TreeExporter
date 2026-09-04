@@ -39,7 +39,7 @@ It can be:
 * updated automatically with GitHub Actions
 * used as a Python library
 * used as a CLI tool
-* exported to SVG or plain text
+* exported to SVG, JSON or plain text
 
 ---
 
@@ -64,6 +64,8 @@ Look at [`./docs/structure.txt`](./docs/structure.txt).
 * Repository scanning
 * SVG export
 * Plain text export
+* JSON export
+* Custom SVG icons for directories and files
 * Built-in SVG themes
 * Configurable excluded directories
 * GitHub Actions support
@@ -128,7 +130,15 @@ tree-exporter \
     --output docs/tree
 ```
 
-The output extension is added automatically.
+Generate structured JSON:
+
+```bash
+tree-exporter \
+    --format json \
+    --output docs/tree
+```
+
+The output extension is added automatically. JSON contains each node's `name`, `type`, and recursively ordered `children`.
 
 ### Themes
 
@@ -139,6 +149,16 @@ tree-exporter \
     --format svg \
     --output docs/tree \
     --theme dark
+```
+
+### Custom icons
+
+SVG labels use folder and file emojis by default. Replace either icon with any text or emoji:
+
+```bash
+tree-exporter \
+    --directory-icon "🗂️" \
+    --file-icon "📝"
 ```
 
 Available themes:
@@ -334,8 +354,10 @@ This will generate `docs/structure.svg` and commit it when the repository struct
 | ------------------- | ----------------------------- | ---------------------------------------------------- |
 | `path`              | `.`                           | Repository path to scan                              |
 | `output`            | `structure`                   | Output path without extension                        |
-| `format`            | `svg`                         | Export format: `svg` or `txt`                        |
+| `format`            | `svg`                         | Export format: `svg`, `txt`, or `json`               |
 | `theme`             | `light`                       | SVG theme                                            |
+| `directory-icon`    | `📁`                          | Directory icon in SVG output                         |
+| `file-icon`         | `📄`                          | File icon in SVG output                              |
 | `exclude`           | `""`                          | Additional excluded directories, separated by commas |
 | `exclude-overwrite` | `false`                       | Replace default exclusions instead of extending them |
 | `commit`            | `false`                       | Commit generated files                               |
@@ -469,10 +491,14 @@ tree = scan_repository(
 * ✅ GitHub Action
 * ✅ Built-in themes
 * 🚧 Mermaid export
-* 🚧 JSON export
+* ✅ JSON export
 * 🚧 PNG export
-* 🚧 Custom icons
+* ✅ Custom icons
 * 🚧 Ignore file support
+* 🧠 Interactive HTML export with collapsible directories
+* 🧠 Per-file language icons and syntax-aware colors
+* 🧠 Git diff mode for structural changes between revisions
+* 🧠 Project config file for reusable defaults
 
 ---
 

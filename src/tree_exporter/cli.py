@@ -6,7 +6,7 @@ from typing import Literal
 import typer
 
 from tree_exporter.config import DEFAULT_EXCLUDES, ScanConfig
-from tree_exporter.renderer import generate_svg, generate_txt
+from tree_exporter.renderer import generate_json, generate_svg, generate_txt
 from tree_exporter.renderer.themes import ThemeName
 from tree_exporter.scanner import scan_repository
 
@@ -70,9 +70,9 @@ def parse_excludes(values: list[str]) -> set[str]:
 
 def resolve_output_path(
     output_base: str,
-    output_format: Literal["txt", "svg"],
+    output_format: Literal["txt", "svg", "json"],
 ) -> str:
-    extension = ".svg" if output_format == "svg" else ".txt"
+    extension = {"svg": ".svg", "txt": ".txt", "json": ".json"}[output_format]
     return f"{output_base}{extension}"
 
 
@@ -100,14 +100,18 @@ def generate(
         help="Output file path without extension",
         callback=validate_output_base,
     ),
-    format: Literal["txt", "svg"] = typer.Option(
+    format: Literal["txt", "svg", "json"] = typer.Option(
         "svg",
-        help="Output format: txt/svg",
+        help="Output format: txt/svg/json",
     ),
     theme: ThemeName = typer.Option(
         "light",
         help="SVG theme: light/dark",
     ),
+    directory_icon: str = typer.Option(
+        "📁", help="Icon for directories in SVG output."
+    ),
+    file_icon: str = typer.Option("📄", help="Icon for files in SVG output."),
     exclude: list[str] = typer.Option(
         [],
         help="Excluded directories separated by comma. Can be repeated.",
@@ -116,7 +120,7 @@ def generate(
         "false",
         help="Replace default excludes",
     ),
-):
+) -> None:
     overwrite = exclude_overwrite.lower() == "true"
 
     config = ScanConfig(
@@ -149,7 +153,11 @@ def generate(
                 tree,
                 output_path,
                 theme=theme,
+                directory_icon=directory_icon,
+                file_icon=file_icon,
             )
+        case "json":
+            generate_json(tree, output_path)
 
     typer.echo(f"Generated {output_path}")
 

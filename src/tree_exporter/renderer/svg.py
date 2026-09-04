@@ -1,7 +1,8 @@
+from html import escape
 from pathlib import Path
 
 from tree_exporter.models import TreeNode
-from tree_exporter.renderer.themes import get_theme, ThemeName
+from tree_exporter.renderer.themes import ThemeName, get_theme
 from tree_exporter.scanner import build_layout
 
 FONT_SIZE = 14
@@ -13,6 +14,8 @@ def generate_svg(
     tree: TreeNode,
     output: str,
     theme: ThemeName = "light",
+    directory_icon: str = "📁",
+    file_icon: str = "📄",
 ) -> None:
     layout = build_layout(tree)
     colors = get_theme(theme)
@@ -29,9 +32,8 @@ def generate_svg(
         x = PADDING + item.depth * INDENT
         y = PADDING + item.y * LINE_HEIGHT
 
-        label = (
-            f"📁 {item.node.name}" if item.node.is_directory else f"📄 {item.node.name}"
-        )
+        icon = directory_icon if item.node.is_directory else file_icon
+        label = escape(f"{icon} {item.node.name}")
 
         text_color = colors.directory if item.node.is_directory else colors.file
 

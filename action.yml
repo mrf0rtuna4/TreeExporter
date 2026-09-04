@@ -27,6 +27,16 @@ inputs:
     required: false
     default: "light"
 
+  directory-icon:
+    description: Icon for directories in SVG output
+    required: false
+    default: "📁"
+
+  file-icon:
+    description: Icon for files in SVG output
+    required: false
+    default: "📄"
+
   exclude:
     description: Additional excluded folders separated by comma
     required: false
@@ -58,6 +68,10 @@ runs:
     - ${{ inputs.format }}
     - --theme
     - ${{ inputs.theme }}
+    - --directory-icon
+    - ${{ inputs.directory-icon }}
+    - --file-icon
+    - ${{ inputs.file-icon }}
     - --exclude
     - ${{ inputs.exclude }}
     - --exclude-overwrite
